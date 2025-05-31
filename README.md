@@ -1,4 +1,5 @@
 # Bytebank
+Um Tech Challenge proposto pela FIAP para integrantes do curso de Pós Tech Front-end Engineer e que engloba os conhecimentos obtidos gradualmente em todas as disciplinas de cada fase.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
 
