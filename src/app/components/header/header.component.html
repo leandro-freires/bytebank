@@ -1,0 +1,19 @@
+<header class="page-header">
+  <div class="page-header__container">
+    <div class="page-header-left-content">
+      <button class="menu-toggle"
+              [class.is-active]="isOpen()"
+              aria-label="Abrir menu"
+              (click)="onClick()">
+        <span class="menu-toggle-icon"></span>
+        <span class="menu-toggle-icon"></span>
+      </button>
+      <div class="page-header__logo">
+        <img src="images/logo/bytebank-logo.svg" alt="Logo Bytebank" />
+      </div>
+    </div>
+    <div class="page-header-right-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,188 @@
+@use 'assets/fonts/inter/inter.scss';
+@import 'material-icons/iconfont/material-icons.css';
+
+/* Variáveis para cores e espaçamento */
+:root {
+  --primary-color: #004d61;
+  --secondary-color: #6c757d;
+  --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
+  --text-color: #212529;
+
+  --spacing-unit: 1.5rem;
+  /* Equivalente a 24px */
+
+
+  /* Colors (adjusted to be closer to the image) */
+
+  --color-primary: #004d61; /* Slightly different blue for primary actions */
+  --color-secondary: #47A138; /* Dark blue/grey for text and some backgrounds (as before) */
+  --color-tertiary: var(--color-black);
+  --color-background-light: #F0F2F5; /* Light grey for overall app background */
+  --color-background-card: var(--color-white); /* White background for cards */
+  --color-background-sidebar: #E0E2E0; /* Cor de fundo da sidebar mais clara (quase branca com leve tom verde) */
+  --color-background-sidebar-active: var(--color-white); /* Fundo do item ativo é branco */
+  --color-background-button-primary: var(--color-primary);
+  --color-sidebar-border: var(--color-light-green); /* Borda verde clara para os itens da sidebar */
+  --color-sidebar-active-text: #4CAF50; /* Verde para o texto do item ativo "Início" */
+  --color-text: var(--color-black);
+  --color-text-dark:  var(--color-black); /* Dark text */
+  --color-text-medium: #666666; /* Medium grey text */
+  --color-text-light: #DEE9EA; /* Light grey text */
+  --color-success: #4CAF50; /* Green for deposits/positive values */
+  --color-danger: #FF5031; /* Red for withdrawals/negative values */
+  --color-border: #E0E0E0; /* Light grey for borders */
+  --color-hover-dark: #1A7BBF; /* Darker blue for hover states */
+  --color-blue-grey: #607D8B; /* Color for some text in top bar, as seen in image */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-lime: #D7F2D5;
+  --color-light-green: #E4EDE3;
+  --color-background-1: var(--color-light-green); /* Borda verde clara para os itens da sidebar */
+
+
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Font Sizes */
+  --font-size-sm: 0.812rem; /* 13px */
+  --font-size-md: 1rem;     /* 16px */
+  --font-size-lg: 1.250rem; /* 20px */
+  --font-size-xl: 1.562rem;   /* 25px */
+  --font-size-xxl: 2rem;    /* 32px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  --layout-max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background-1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.page-wrapper {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: calc(var(--spacing-unit) * 5) auto var(--spacing-unit) auto;
+  padding: 0 var(--spacing-unit);
+  gap: var(--spacing-unit);
+}
+
+.sidebar-left {
+  flex: 0 0 210px;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.main-content__title {
+  margin-bottom: var(--spacing-unit);
+  color: var(--primary-color);
+}
+
+.main-content__text {
+  margin-bottom: 1rem;
+}
+
+.content-aside {
+  flex: 0 0 280px;
+
+  &_title {
+    margin-bottom: var(--spacing-unit);
+    color: var(--primary-color);
+  }
+
+  &__list {
+    padding-left: 1.2rem;
+    list-style-type: disc;
+  }
+
+  &__item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-wrapper {
+    flex-wrap: wrap;
+    padding: 0 var(--spacing-unit);
+  }
+
+  .sidebar-left {
+    flex: 1 1 100%;
+    order: -1;
+  }
+
+  .main-content {
+    flex: 2 1 100%;
+  }
+
+  .content-aside {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 1rem;
+    margin-top: calc(var(--spacing-unit) * 4);
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .main-content {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .content-aside {
+    flex: 1 1 100%;
+  }
+
+  .page-header__container {
+    max-width: none;
+    padding: 0 1rem;
+  }
+}

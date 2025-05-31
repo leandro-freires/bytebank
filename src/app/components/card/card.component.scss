@@ -1,0 +1,19 @@
+
+
+.card {
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__title {
+  margin-bottom: var(--spacing-unit);
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--spacing-md);
+  }
+}

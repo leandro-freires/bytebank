@@ -1,0 +1,9 @@
+<ng-content select=".material-icons:not([iconPositionEnd])"></ng-content>
+
+@if (!iconButton()) {
+  <span class="button__label">
+    <ng-content></ng-content>
+  </span>
+}
+
+<ng-content select=".material-icons[iconPositionEnd]"></ng-content>
