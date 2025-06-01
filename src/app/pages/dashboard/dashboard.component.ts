@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, signal, ViewEncapsulation } from '@
 import { HeaderComponent } from '../../components/header/header.component';
 import { SideMenuComponent } from '../../components/side-menu/side-menu.component';
 import { BankStatementComponent } from '../../ui/bank-statement/bank-statement.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,8 @@ import { BankStatementComponent } from '../../ui/bank-statement/bank-statement.c
     SideMenuComponent,
     BankStatementComponent,
     DatePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    RouterOutlet
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

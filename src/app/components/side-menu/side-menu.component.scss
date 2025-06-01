@@ -4,6 +4,7 @@
   padding: var(--font-size-lg);
   box-shadow: var(--shadow-sm);
   max-width: 210px;
+  height: 100%;
 
   &__close-button {
     display: none;
@@ -12,7 +13,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-  }
+    }
 
   &__item {
     text-align: center;
@@ -91,6 +92,7 @@
     padding: var(--font-size-lg);
     opacity: 0;
     transition: opacity 0.3s ease;
+    height: auto;
 
     &__close-button {
       display: block;

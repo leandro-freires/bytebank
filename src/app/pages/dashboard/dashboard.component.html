@@ -1,10 +1,10 @@
 <app-header>
-    <div class="page-header__username">
-      Leandro Rodrigues Freires
-    </div>
-    <div class="page-header__user-avatar">
-      <img src="images/avatar/avatar.png" alt="Avatar" />
-    </div>
+  <div class="page-header__username">
+    Leandro Rodrigues Freires
+  </div>
+  <div class="page-header__user-avatar">
+    <img src="images/avatar/avatar.png" alt="Avatar" />
+  </div>
 </app-header>
 
 <div class="page-wrapper">
@@ -12,27 +12,27 @@
     <app-side-menu></app-side-menu>
   </aside>
 
-  <main class="main-content">
-    <section>
-        <section class="welcome-banner">
-          <div class="greetings-section">
-            <h2>Olá, Joana! :)</h2>
-            <p class="date">{{ today() | date:'EEEE, dd/MM/yyyy' | titlecase }}</p>
-          </div>
-
-          <div class="account-summary">
-            <div class="balance-info">
-              <span class="label">
-                Saldo <i class="material-icons" (click)="onShowBalanceValue()">{{showBalanceValue() ? 'visibility_off' : 'visibility'}}</i>
-              </span>
-              <hr class="divider">
-              <p class="balance-value">R$ {{ showBalanceValue() ? '2.500,00' : '- - - - - - -' }}</p>
-            </div>
-          </div>
-          <img id="pixels-bottom-left" src="images/dashboard/pixels-bottom-left.svg" alt="">
-          <img id="illustration1" src="images/dashboard/illustration1.svg" alt="">
-          <img id="pixels-top-right" src="images/dashboard/pixels-top-right.svg" alt="">
-        </section>
+  <main class="main-container">
+    <section class="welcome-banner">
+      <div class="greetings-section">
+        <h2>Olá, Joana! :)</h2>
+        <p class="date">{{ today() | date:'EEEE, dd/MM/yyyy' | titlecase }}</p>
+      </div>
+      <div class="account-summary">
+        <div class="balance-info">
+          <span class="label">
+            Saldo <i class="material-icons" (click)="onShowBalanceValue()">{{showBalanceValue() ? 'visibility_off' : 'visibility'}}</i>
+          </span>
+          <hr class="divider">
+          <p class="balance-value">R$ {{ showBalanceValue() ? '2.500,00' : '- - - - - - -' }}</p>
+        </div>
+      </div>
+      <img id="pixels-bottom-left" src="images/dashboard/pixels-bottom-left.svg" alt="">
+      <img id="illustration1" src="images/dashboard/illustration1.svg" alt="">
+      <img id="pixels-top-right" src="images/dashboard/pixels-top-right.svg" alt="">
+    </section>
+    <section class="main-content">
+      <router-outlet></router-outlet>
     </section>
   </main>
 

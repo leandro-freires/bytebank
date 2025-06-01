@@ -10,10 +10,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   height: var(--header-height);
 
-  &__menu-button {
-    display: none;
-  }
-
   &__logo {
     display: none
   }
@@ -35,7 +31,7 @@
   }
 
   &-left-content {
-    .menu-toggle {
+    .page-header__menu-button {
       display: none;
     }
   }
@@ -47,8 +43,10 @@
       display: none;
     }
 
-    &__menu-button {
-      display: none;
+    &-left-content {
+      .page-header__menu-button {
+        display: none;
+      }
     }
   }
 }
@@ -70,8 +68,12 @@
     }
 
     &-left-content {
-      .material-icons {
-        color: var(--color-danger);
+      .page-header__menu-button {
+        display: block;
+
+        .material-icons {
+          color: var(--color-danger);
+        }
       }
     }
   }
