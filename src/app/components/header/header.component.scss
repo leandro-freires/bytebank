@@ -1,5 +1,5 @@
 .page-header {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   color: var(--white);
   padding: 0.5rem 0;
   position: fixed;
@@ -8,7 +8,11 @@
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  height: 96px;
+  height: var(--header-height);
+
+  &__menu-button {
+    display: none;
+  }
 
   &__logo {
     display: none
@@ -20,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 var(--spacing-unit);
+    padding: 0 var(--spacing-lg);
     height: 100%;
   }
 
@@ -37,11 +41,27 @@
   }
 }
 
+@media (max-width: 992px) {
+  .page-header {
+    &__logo {
+      display: none;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+  }
+}
+
 
 @media (max-width: 768px) {
   .page-header {
+    &__menu-button {
+      display: block;
+    }
+
     &__container {
-      padding: 0 var(--spacing-unit);
+      padding: 0 var(--spacing-lg);
     }
 
     &__logo,
@@ -50,56 +70,8 @@
     }
 
     &-left-content {
-      .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        font-size: 1.5rem;
-        color: var(--white);
-
-        &.is-active {
-          .menu-toggle-icon {
-            background-color: transparent;
-
-            &::before {
-              transform: translateY(8px) rotate(45deg);
-            }
-
-            &::after {
-              transform: translateY(-8px) rotate(-45deg);
-            }
-          }
-        }
-
-        &-icon {
-          display: block;
-          width: 25px;
-          height: 2px;
-          background-color: var(--color-danger);
-          position: relative;
-          transition: background-color 0.3s;
-
-          &::before,
-          &::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: var(--color-danger);
-            position: absolute;
-            transition: transform 0.3s;
-          }
-
-          &::before {
-            top: -8px;
-          }
-
-          &::after {
-            top: 8px;
-          }
-        }
+      .material-icons {
+        color: var(--color-danger);
       }
     }
   }

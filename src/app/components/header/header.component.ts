@@ -1,9 +1,12 @@
-import { Component, computed, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { NavigationService } from '../../shared/services/navigation.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    ButtonComponent
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -11,8 +14,6 @@ import { NavigationService } from '../../shared/services/navigation.service';
 export class HeaderComponent {
 
   navigationService: NavigationService = inject(NavigationService);
-
-  isOpen = computed(() => this.navigationService.open());
 
   onClick(): void {
     this.navigationService.onToggle();

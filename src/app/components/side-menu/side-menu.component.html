@@ -1,5 +1,9 @@
 <nav class="sidebar-nav"
      [class.is-open]="isOpen()">
+  <div class="sidebar-nav__close-button"
+       (click)="onClick()">
+    <span class="material-icons">close</span>
+  </div>
   <ul class="sidebar-nav__list">
     <li class="sidebar-nav__item">
       <a routerLink="/"

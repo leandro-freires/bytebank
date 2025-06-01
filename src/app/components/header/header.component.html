@@ -1,15 +1,17 @@
 <header class="page-header">
   <div class="page-header__container">
     <div class="page-header-left-content">
-      <button class="menu-toggle"
-              [class.is-active]="isOpen()"
+      <button appButton
+              class="page-header__menu-button"
+              [iconButton]="true"
+              size="large"
               aria-label="Abrir menu"
               (click)="onClick()">
-        <span class="menu-toggle-icon"></span>
-        <span class="menu-toggle-icon"></span>
+        <span class="material-icons">menu</span>
       </button>
       <div class="page-header__logo">
-        <img src="images/logo/bytebank-logo.svg" alt="Logo Bytebank" />
+        <img src="images/logo/bytebank-logo.svg"
+             alt="Logo Bytebank" />
       </div>
     </div>
     <div class="page-header-right-content">

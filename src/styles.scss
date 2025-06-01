@@ -3,18 +3,6 @@
 
 /* Variáveis para cores e espaçamento */
 :root {
-  --primary-color: #004d61;
-  --secondary-color: #6c757d;
-  --light-bg: #f8f9fa;
-  --dark-bg: #343a40;
-  --text-color: #212529;
-
-  --spacing-unit: 1.5rem;
-  /* Equivalente a 24px */
-
-
-  /* Colors (adjusted to be closer to the image) */
-
   --color-primary: #004d61; /* Slightly different blue for primary actions */
   --color-secondary: #47A138; /* Dark blue/grey for text and some backgrounds (as before) */
   --color-tertiary: var(--color-black);
@@ -40,8 +28,6 @@
   --color-light-green: #E4EDE3;
   --color-background-1: var(--color-light-green); /* Borda verde clara para os itens da sidebar */
 
-
-
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -53,7 +39,7 @@
   --font-size-sm: 0.812rem; /* 13px */
   --font-size-md: 1rem;     /* 16px */
   --font-size-lg: 1.250rem; /* 20px */
-  --font-size-xl: 1.562rem;   /* 25px */
+  --font-size-xl: 1.562rem; /* 25px */
   --font-size-xxl: 2rem;    /* 32px */
 
   --font-weight-light: 300;
@@ -68,7 +54,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  --layout-max-width: 1200px;
+  --header-height: 96px;
 }
 
 *,
@@ -91,7 +77,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 ul {
@@ -102,9 +88,9 @@ ul {
   display: flex;
   flex: 1;
   max-width: 1200px;
-  margin: calc(var(--spacing-unit) * 5) auto var(--spacing-unit) auto;
-  padding: 0 var(--spacing-unit);
-  gap: var(--spacing-unit);
+  margin: calc(var(--spacing-lg) * 5) auto var(--spacing-lg) auto;
+  padding: 0 var(--spacing-lg);
+  gap: var(--spacing-lg);
 }
 
 .sidebar-left {
@@ -116,8 +102,8 @@ ul {
 }
 
 .main-content__title {
-  margin-bottom: var(--spacing-unit);
-  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
 }
 
 .main-content__text {
@@ -128,8 +114,8 @@ ul {
   flex: 0 0 280px;
 
   &_title {
-    margin-bottom: var(--spacing-unit);
-    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
   }
 
   &__list {
@@ -145,7 +131,7 @@ ul {
 @media (max-width: 992px) {
   .page-wrapper {
     flex-wrap: wrap;
-    padding: 0 var(--spacing-unit);
+    padding: 0 var(--spacing-lg);
   }
 
   .sidebar-left {
@@ -165,7 +151,7 @@ ul {
 @media (max-width: 768px) {
   .page-wrapper {
     padding: 0 1rem;
-    margin-top: calc(var(--spacing-unit) * 4);
+    margin-top: calc(var(--spacing-lg) * 4);
   }
 
   .sidebar-nav {

@@ -5,6 +5,10 @@
   box-shadow: var(--shadow-sm);
   max-width: 210px;
 
+  &__close-button {
+    display: none;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -14,14 +18,15 @@
     text-align: center;
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-primary);
+      .sidebar-nav__link {
+        border-bottom: 1px solid var(--color-primary);
+      }
     }
   }
 
   &__link {
     display: block;
     padding: 0.6rem 1rem;
-    border-radius: 4px;
     color: var(--color-primary);
     transition: background-color 0.3s;
     white-space: nowrap;
@@ -44,6 +49,10 @@
     border: none;
     max-width: 100%;
 
+    &__close-button {
+      display: none;
+    }
+
     &__list {
       flex-direction: row;
       justify-content: center;
@@ -52,17 +61,18 @@
 
     &__item {
       margin-bottom: 0;
-      border-bottom: none !important;
     }
 
     &__link {
+      border-bottom: none !important;
+
       &:hover,
       &.actived {
         color: var(--color-secondary);
       }
 
       &.actived {
-        border-bottom: 1px solid var(--color-secondary);
+        border-bottom: 1px solid var(--color-secondary) !important;
       }
     }
   }
@@ -72,20 +82,36 @@
   .sidebar-nav {
     display: none;
     position: absolute;
+    top: 0;
     left: 0;
     background-color: var(--color-background-1);
     border-radius: 0;
-    z-index: 1;
+    z-index: 9999;
     width: 210px;
     padding: var(--font-size-lg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &__close-button {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 4px 4px 0;
+      color: var(--color-secondary);
+      cursor: pointer;
+    }
 
     &__list {
       flex-direction: column;
+      gap: 0;
     }
 
     &__item {
       &:not(:last-child) {
-        border-bottom: 1px solid var(--color-black) !important;
+        .sidebar-nav__link {
+          border-bottom: 1px solid var(--color-tertiary);
+        }
       }
     }
 
@@ -98,12 +124,13 @@
       }
 
       &.actived {
-        border-bottom: none;
+        border-bottom-color: var(--color-secondary) !important;
       }
     }
 
     &.is-open {
       display: block;
+      opacity: 1;
     }
   }
 }

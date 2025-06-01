@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgTemplateOutlet } from '@angular/common';
+
 import { NavigationService } from '../../shared/services/navigation.service';
 
 @Component({
@@ -18,4 +18,7 @@ export class SideMenuComponent {
 
   isOpen = computed(() => this.navigationService.open());
 
+  onClick(): void {
+    this.navigationService.onToggle();
+  }
 }
