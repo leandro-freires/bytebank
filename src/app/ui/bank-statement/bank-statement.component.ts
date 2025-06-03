@@ -1,6 +1,6 @@
 import { DatePipe, DecimalPipe, TitleCasePipe } from '@angular/common';
 import { Component, computed, inject, input, OnDestroy, signal, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -36,7 +36,9 @@ export class BankStatementComponent implements OnDestroy {
 
   transacaoService = inject(FinancialTransactionService);
 
-  private routerService = inject(Router);
+  private router = inject(Router);
+
+  private route = inject(ActivatedRoute);
 
   private groupByMonthAndYear(transacoes: TransacaoFinanceira[]): TransacaoFinanceiraAgrupada[] {
     const grupos = transacoes.reduce((acc, transacao) => {
@@ -88,7 +90,7 @@ export class BankStatementComponent implements OnDestroy {
       return;
     }
 
-    this.routerService.navigate(['transferencia', selectedId], { onSameUrlNavigation: 'reload' });
+    this.router.navigate(['transferencia', selectedId], { relativeTo: this.route });
     this.itemSelected.set(undefined);
   }
 
