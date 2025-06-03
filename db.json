@@ -1,0 +1,46 @@
+{
+  "transacoes": [
+    {
+      "id": "354d",
+      "tipoTransacao": "DEPOSITO",
+      "valor": 250,
+      "dataOperacao": "2025-04-20T10:30:00.000Z"
+    },
+    {
+      "id": "fh75",
+      "tipoTransacao": "TRANSFERENCIA",
+      "valor": 250,
+      "dataOperacao": "2025-04-21T14:00:00.000Z"
+    },
+    {
+      "id": "s43g",
+      "tipoTransacao": "PAGAMENTO",
+      "valor": 250,
+      "dataOperacao": "2025-05-22T09:15:00.000Z"
+    },
+    {
+      "id": "a86d",
+      "tipoTransacao": "DEPOSITO",
+      "valor": 300,
+      "dataOperacao": "2025-05-23T11:45:00.000Z"
+    },
+    {
+      "id": "9a0d",
+      "tipoTransacao": "DEPOSITO",
+      "valor": 75.5,
+      "dataOperacao": "2025-06-02T16:20:00.000Z"
+    },
+    {
+      "id": "4e60",
+      "tipoTransacao": "DEPOSITO",
+      "valor": 10,
+      "dataOperacao": "2025-06-02T16:01:16.405Z"
+    },
+    {
+      "id": "8c99",
+      "tipoTransacao": "DEPOSITO",
+      "valor": 100,
+      "dataOperacao": "2025-06-02T16:01:57.076Z"
+    }
+  ]
+}

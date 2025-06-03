@@ -1,0 +1,41 @@
+<app-card title="Nova transação" customClass="custom-card">
+  <form (ngSubmit)="onSubmit(form)"
+        #form=ngForm
+        novalidate>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <app-control>
+            <select name="tipoTransacao" [(ngModel)]="tipoTransacao" required>
+              <option value="">Selecione o tipo de transação</option>
+              <option value="DEPOSITO">Depósito</option>
+              <option value="PAGAMENTO">Pagamento</option>
+              <option value="TRANSFERENCIA">Transferência</option>
+            </select>
+          </app-control>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <app-control label="Valor">
+            <input name="valor"
+                   currencyMask
+                   required
+                   [(ngModel)]="valor" />
+          </app-control>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <button appButton size="large"
+                  [disabled]="form.invalid">
+            Concluir transação
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <img id="pixels-gray-bottom-left" src="images/financial-transaction/pixels-gray-bottom-left.svg" alt="">
+  <img id="pixels-gray-top-right" src="images/financial-transaction/pixels-gray-top-right.svg" alt="">
+</app-card>

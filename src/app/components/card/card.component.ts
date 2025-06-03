@@ -1,8 +1,11 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -10,5 +13,7 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
 export class CardComponent {
 
   title = input<string>();
+
+  customClass = input< string | string[] | Set<string> | {[key: string]: any}>();
 
 }

@@ -15,7 +15,7 @@
   <main class="main-container">
     <section class="welcome-banner">
       <div class="greetings-section">
-        <h2>Olá, Joana! :)</h2>
+        <h2>Olá, Leandro! :)</h2>
         <p class="date">{{ today() | date:'EEEE, dd/MM/yyyy' | titlecase }}</p>
       </div>
       <div class="account-summary">
@@ -24,7 +24,7 @@
             Saldo <i class="material-icons" (click)="onShowBalanceValue()">{{showBalanceValue() ? 'visibility_off' : 'visibility'}}</i>
           </span>
           <hr class="divider">
-          <p class="balance-value">R$ {{ showBalanceValue() ? '2.500,00' : '- - - - - - -' }}</p>
+          <p class="balance-value">R$ {{ showBalanceValue() ? (balanceValue() | number: '0.2-2') : '- - - - - - -' }}</p>
         </div>
       </div>
       <img id="pixels-bottom-left" src="images/dashboard/pixels-bottom-left.svg" alt="">
@@ -37,6 +37,6 @@
   </main>
 
   <aside class="content-aside">
-    <app-bank-statement></app-bank-statement>
+    <app-bank-statement [transacoes]="transacoes()"/>
   </aside>
 </div>

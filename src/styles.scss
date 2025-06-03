@@ -1,32 +1,35 @@
 @use 'assets/fonts/inter/inter.scss';
 @import 'material-icons/iconfont/material-icons.css';
 
-/* Variáveis para cores e espaçamento */
+
 :root {
-  --color-primary: #004d61; /* Slightly different blue for primary actions */
-  --color-secondary: #47A138; /* Dark blue/grey for text and some backgrounds (as before) */
+  --color-primary: #004d61;
+  --color-secondary: #47A138;
   --color-tertiary: var(--color-black);
-  --color-background-light: #F0F2F5; /* Light grey for overall app background */
-  --color-background-card: var(--color-white); /* White background for cards */
-  --color-background-sidebar: #E0E2E0; /* Cor de fundo da sidebar mais clara (quase branca com leve tom verde) */
-  --color-background-sidebar-active: var(--color-white); /* Fundo do item ativo é branco */
+  --color-background-light: #F0F2F5;
+  --color-background-card: var(--color-white);
+  --color-background-sidebar: #E0E2E0;
+  --color-background-sidebar-active: var(--color-white);
   --color-background-button-primary: var(--color-primary);
-  --color-sidebar-border: var(--color-light-green); /* Borda verde clara para os itens da sidebar */
-  --color-sidebar-active-text: #4CAF50; /* Verde para o texto do item ativo "Início" */
+  --color-sidebar-border: var(--color-light-green);
+  --color-sidebar-active-text: #4CAF50;
   --color-text: var(--color-black);
-  --color-text-dark:  var(--color-black); /* Dark text */
-  --color-text-medium: #666666; /* Medium grey text */
-  --color-text-light: #DEE9EA; /* Light grey text */
-  --color-success: #4CAF50; /* Green for deposits/positive values */
-  --color-danger: #FF5031; /* Red for withdrawals/negative values */
-  --color-border: #E0E0E0; /* Light grey for borders */
-  --color-hover-dark: #1A7BBF; /* Darker blue for hover states */
-  --color-blue-grey: #607D8B; /* Color for some text in top bar, as seen in image */
+  --color-text-dark:  var(--color-black);
+  --color-text-medium: #666666;
+  --color-text-light: var(--color-light-green-1);
+  --color-success: #4CAF50;
+  --color-danger: #FF5031;
+  --color-border: #E0E0E0;
+  --color-hover-dark: #1A7BBF;
+  --color-blue-grey: #607D8B;
   --color-white: #fff;
   --color-black: #000;
   --color-lime: #D7F2D5;
   --color-light-green: #E4EDE3;
-  --color-background-1: var(--color-light-green); /* Borda verde clara para os itens da sidebar */
+  --color-grey: #CBCBCB;
+  --color-background-1: var(--color-light-green);
+  --color-light-green-1: #DEE9EA;
+  --color-gradient-1: linear-gradient(#004D61, var(--color-white));
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -55,6 +58,8 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   --header-height: 96px;
+
+  --font-family: 'Inter';
 }
 
 *,
@@ -66,7 +71,7 @@
 }
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: var(--font-family), Arial, sans-serif;
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-background-1);
@@ -82,102 +87,4 @@ a {
 
 ul {
   list-style: none;
-}
-
-.page-wrapper {
-  display: flex;
-  flex: 1;
-  max-width: 1200px;
-  margin: calc(var(--spacing-lg) * 5) auto var(--spacing-lg) auto;
-  padding: 0 var(--spacing-lg);
-  gap: var(--spacing-lg);
-  height: calc(100vh - 144px);
-}
-
-.sidebar-left {
-  flex: 0 0 210px;
-}
-
-.main-container {
-  flex: 3;
-}
-
-.main-container__title {
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
-}
-
-.main-container__text {
-  margin-bottom: 1rem;
-}
-
-.content-aside,
-.sidebar-left,
-.page-wrapper {
-  height: calc(100vh - 144px);
-}
-
-.content-aside {
-  flex: 0 0 280px;
-
-  &_title {
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-primary);
-  }
-
-  &__list {
-    padding-left: 1.2rem;
-    list-style-type: disc;
-  }
-
-  &__item {
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .page-wrapper {
-    flex-wrap: wrap;
-    padding: 0 var(--spacing-lg);
-  }
-
-  .sidebar-left {
-    flex: 1 1 100%;
-    order: -1;
-    height: auto;
-  }
-
-  .main-container {
-    flex: 2 1 100%;
-  }
-
-  .content-aside {
-    flex: 1 1 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-wrapper {
-    padding: 0 1rem;
-    margin-top: calc(var(--spacing-lg) * 4);
-  }
-
-  .sidebar-nav {
-    display: none;
-    height: auto;
-  }
-
-  .main-container {
-    flex: 1 1 100%;
-    padding: 0;
-  }
-
-  .content-aside {
-    flex: 1 1 100%;
-  }
-
-  .page-header__container {
-    max-width: none;
-    padding: 0 1rem;
-  }
 }

@@ -2,73 +2,52 @@
   <div class="bank-statement">
     <div class="bank-statement__header">
       <h3 class="bank-statement__title">Extrato</h3>
-      <div class="bank-statement__actions">
-        <button appButton
-                [iconButton]="true"
-                disabled
-                size="small">
-          <span class="material-icons" iconPositionEnd>edit</span>
-        </button>
-        <button appButton
-                [iconButton]="true"
-                disabled
-                size="small">
-          <span class="material-icons" iconPositionEnd>delete</span>
-        </button>
-      </div>
+      @if (itemSelected()) {
+        <div class="bank-statement__actions">
+          <button appButton
+                  [iconButton]="true"
+                  (click)="onEditItem()"
+                  size="small">
+            <span class="material-icons" iconPositionEnd>edit</span>
+          </button>
+          <button appButton
+                  [iconButton]="true"
+                  (click)="onDeleteItem()"
+                  size="small">
+            <span class="material-icons" iconPositionEnd>delete</span>
+          </button>
+        </div>
+      }
     </div>
-    <ul class="bank-statement__list">
-      <li class="bank-statement__item">
-        <span class="bank-statement__month">Novembro</span>
-        <div class="bank-statement__item-details">
-          <div class="bank-statement__payment-details">
-            <span class="bank-statement__item-name">Depósito</span>
-            <span class="bank-statement__item-value">+ R$ 500,00</span>
-          </div>
-          <span class="bank-statement__item-date">08/05/2023</span>
-        </div>
-      </li>
-      <li class="bank-statement__item">
-        <span class="bank-statement__month">Novembro</span>
-        <div class="bank-statement__item-details">
-          <div class="bank-statement__payment-details">
-            <span class="bank-statement__item-name">Depósito</span>
-            <span class="bank-statement__item-value">+ R$ 500,00</span>
-          </div>
-          <span class="bank-statement__item-date">08/05/2023</span>
-        </div>
-      </li>
-      <li class="bank-statement__item">
-        <span class="bank-statement__month">Novembro</span>
-        <div class="bank-statement__item-details">
-          <div class="bank-statement__payment-details">
-            <span class="bank-statement__item-name">Depósito</span>
-            <span class="bank-statement__item-value">+ R$ 500,00</span>
-          </div>
-          <span class="bank-statement__item-date">08/05/2023</span>
-        </div>
-      </li>
-      <li class="bank-statement__item">
-        <span class="bank-statement__month">Novembro</span>
-        <div class="bank-statement__item-details">
-          <div class="bank-statement__payment-details">
-            <span class="bank-statement__item-name">Depósito</span>
-            <span class="bank-statement__item-value">+ R$ 500,00</span>
-          </div>
-          <span class="bank-statement__item-date">08/05/2023</span>
-        </div>
-      </li>
-      <li class="bank-statement__item">
-        <span class="bank-statement__month">Novembro</span>
-        <div class="bank-statement__item-details">
-          <div class="bank-statement__payment-details">
-            <span class="bank-statement__item-name">Depósito</span>
-            <span class="bank-statement__item-value">+ R$ 500,00</span>
-          </div>
-          <span class="bank-statement__item-date">08/05/2023</span>
-        </div>
-      </li>
-    </ul>
+
+    @if (transacoesAgrupadas().length > 0) {
+      <ul class="bank-statement__list">
+        @for (grupo of transacoesAgrupadas(); track grupo.mesAno) {
+          <li class="bank-statement__group-container">
+            <span class="bank-statement__group-title">{{ grupo.mesAno | date: 'MMMM' | titlecase }}</span>
+            <ul class="bank-statement__group">
+              @for (transacao of grupo.transacoes; track transacao.id) {
+                <li class="bank-statement__item"
+                    [class.selected]="itemSelected() && itemSelected() === transacao.id"
+                    (click)="onItemSelected(transacao.id)">
+                  <div class="bank-statement__item-details">
+                    <div class="bank-statement__payment-details">
+                      <span class="bank-statement__item-name">{{ transacao.descricao }}</span>
+                      <span class="bank-statement__item-value">{{ transacao.tipoMovimentacao === 'entrada' ? '+ ' : '- ' }}R$ {{ transacao.valor | number: '0.2-2' }}</span>
+                    </div>
+                    <span class="bank-statement__item-date">{{ transacao.dataOperacao | date:'dd/MM' }}</span>
+                  </div>
+                </li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+    } @else {
+      <div class="bank-statement__empty-container">
+        <span class="bank-statement&#45;&#45;empty">Sem lançamentos</span>
+      </div>
+    }
   </div>
 </app-card>
 

@@ -1,7 +1,6 @@
-<div class="card">
+<div class="card" [ngClass]="customClass()">
   @if ( title()) {
     <h3 class="card__title">{{ title() }}</h3>
   }
-<!--  <h3 class="bank-statement__title">Itens em Destaque</h3>-->
   <ng-content></ng-content>
 </div>

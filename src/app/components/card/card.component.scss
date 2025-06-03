@@ -1,15 +1,14 @@
-
-
 .card {
   background-color: var(--color-background-card);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-sm);
-}
 
-.card__title {
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+  &__title {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+  }
 }
 
 @media (max-width: 768px) {

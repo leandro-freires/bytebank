@@ -1,60 +1,72 @@
 # Bytebank
-Um Tech Challenge proposto pela FIAP para integrantes do curso de Pós Tech Front-end Engineer e que engloba os conhecimentos obtidos gradualmente em todas as disciplinas de cada fase.
+A banking application developed as a Tech Challenge for FIAP's Post Tech Front-end Engineer course.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+## Prerequisites
 
-## Development server
+Before running this project, make sure you have installed:
 
-To start a local development server, run:
+- Node.js (Latest LTS version)
+- npm (Node Package Manager)
+- Angular CLI 19.2.14 (`npm install -g @angular/cli`)
+
+## Project Setup
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/leandro-freires/bytebank 
+```
+
+2. **Install Dependencies**
+
+```bash
+cd bytebank
+```
+```bash
+npm install
+```
+
+This will install the following required dependencies:
+
+### Core Dependencies
+- Angular (v19.2.0)
+- Bootstrap (v5.3.6)
+- NGX Currency (v19.0.0)
+- Material Icons (v1.13.14)
+
+## Running the Application
+
+The application requires two processes to run simultaneously:
+
+1. **Start the Mock Backend Server**
+
+```bash
+npm run json-serve
+```
+This will start the JSON Server on `http://localhost:3000`
+
+2. **Start the Angular Application**
+
+   In a new terminal window:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200` in your browser
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Alternative Start Method
+You can start both servers simultaneously using:
 
 ```bash
-ng generate --help
+npm run start:dev
 ```
 
-## Building
+## Development Notes
 
-To build the project run:
+- The application will automatically reload when you make changes to source files
+- The mock backend (json-server) provides a simulated API for development
+- Bootstrap is included for styling and responsive design
+- NGX Currency is used for currency formatting
+- Material Icons are available for UI elements
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

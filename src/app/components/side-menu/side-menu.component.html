@@ -6,14 +6,16 @@
   </div>
   <ul class="sidebar-nav__list">
     <li class="sidebar-nav__item">
-      <a routerLink="/"
+      <a routerLink="/bytebank-admin"
+         [routerLinkActiveOptions]="{ exact: true }"
          routerLinkActive="actived"
          class="sidebar-nav__link">
         Início
       </a>
     </li>
     <li class="sidebar-nav__item">
-      <a href="#"
+      <a routerLink="transferencia"
+         routerLinkActive="actived"
          class="sidebar-nav__link">
         Transferências
       </a>
